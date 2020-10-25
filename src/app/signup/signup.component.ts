@@ -27,7 +27,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoading = true;
-    setTimeout(() => (this.isLoading = false), 1300);
+    setTimeout(() => (this.isLoading = false), 2000);
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('userId')) {
         this.mode = 'edit';

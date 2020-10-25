@@ -1,0 +1,19 @@
+<div style="display: flex; flex-flow: column; height: 100%">
+  <mat-toolbar color="primary" class="toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <app-header></app-header>
+  </mat-toolbar>
+  <mat-sidenav-container
+    class="sidenav-container"
+    style="display: flex; flex-grow: 1"
+  >
+    <mat-sidenav #snav mode="over" class="sid-nav"
+      ><app-sidenav></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content class="sid-cont">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

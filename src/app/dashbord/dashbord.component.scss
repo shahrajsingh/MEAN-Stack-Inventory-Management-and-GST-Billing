@@ -1,0 +1,16 @@
+.toolbar {
+  display: flex;
+  width: 100%;
+}
+app-header {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column;
+}
+.sid-nav {
+  width: 200px;
+}
+.sid-cont {
+  height: 100%;
+  padding: 0px 16px;
+}

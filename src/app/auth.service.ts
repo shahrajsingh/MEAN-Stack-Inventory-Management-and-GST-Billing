@@ -4,7 +4,7 @@ import { Observable, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-const BACKEND_URL = 'http://localhost:3000' + '/users/';
+const BACKEND_URL = 'http://localhost:3000/api' + '/users';
 @Injectable({
   providedIn: 'root',
 })
@@ -62,14 +62,17 @@ export class AuthService {
       question: ques,
       answer: ans,
     };
-    this.http.post<{ message: string }>(BACKEND_URL + '', authData).subscribe(
-      (res) => {
-        this.router.navigate(['/']);
-      },
-      (error) => {
-        this.authStatusListener.next(false);
-      }
-    );
+    this.http
+      .post<{ message: string }>(BACKEND_URL + '/signup', authData)
+      .subscribe(
+        (res) => {
+          this.router.navigate(['/']);
+        },
+        (error) => {
+          console.log(error);
+          this.authStatusListener.next(false);
+        }
+      );
   }
 
   login(email: string, pass: string) {
@@ -96,7 +99,7 @@ export class AuthService {
               now.getTime() + expiresInDuration * 1000
             );
             this.saveAuthData(token, expirationDate, this.userId);
-            this.router.navigate(['/app']);
+            this.router.navigate(['/app/home']);
           }
         },
         (error) => {

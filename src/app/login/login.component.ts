@@ -15,12 +15,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoading = true;
-    setTimeout(() => (this.isLoading = false), 1300);
+    setTimeout(() => (this.isLoading = false), 2000);
     if (this.authService.getIsAuth()) {
       this.router.navigate(['/app']);
     }
   }
   login(form: NgForm) {
+    console.log(form);
     if (form.invalid) {
       return;
     } else {
