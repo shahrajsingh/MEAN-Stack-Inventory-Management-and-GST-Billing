@@ -1,1 +1,21 @@
-<p>home works!</p>
+<div class="home-container">
+  <div class="toolbar-row">
+    <button mat-raised-button color="primary" class="mob-btn">
+      <mat-icon class="mob-btn-ico">add</mat-icon
+      ><a class="mob-btn-txt">New Bill</a>
+    </button>
+    <button class="btn">
+      <mat-icon class="btn-ico">add</mat-icon> <a class="btn-text"> New Bill</a>
+    </button>
+    <button class="btn" [routerLink]="['bills']">
+      <mat-icon class="btn-ico">receipt</mat-icon>
+      <a class="btn-text"> View Old Bills</a>
+    </button>
+    <button class="btn">
+      <mat-icon class="btn-ico" [routerLink]="['inventory']">store</mat-icon>
+      <a class="btn-text"> Check Inventory</a>
+    </button>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="work-area"></div>
+</div>
