@@ -1,21 +1,51 @@
 <div class="home-container">
   <div class="toolbar-row">
-    <button mat-raised-button color="primary" class="mob-btn">
+    <button
+      mat-raised-button
+      (click)="makebill()"
+      color="primary"
+      class="mob-btn"
+    >
       <mat-icon class="mob-btn-ico">add</mat-icon
       ><a class="mob-btn-txt">New Bill</a>
     </button>
-    <button class="btn">
-      <mat-icon class="btn-ico">add</mat-icon> <a class="btn-text"> New Bill</a>
+    <button mat-raised-button (click)="makebill()" color="primary" class="btn">
+      <mat-icon class="btn-ico">add</mat-icon><a class="btn-text">New Bill</a>
     </button>
-    <button class="btn" [routerLink]="['bills']">
+    <button
+      mat-raised-button
+      color="primary"
+      class="btn"
+      [routerLink]="['bills']"
+    >
       <mat-icon class="btn-ico">receipt</mat-icon>
-      <a class="btn-text"> View Old Bills</a>
+      <a class="btn-text">View Old Bills</a>
     </button>
-    <button class="btn">
+    <button mat-raised-button color="primary" class="btn">
       <mat-icon class="btn-ico" [routerLink]="['inventory']">store</mat-icon>
-      <a class="btn-text"> Check Inventory</a>
+      <a class="btn-text">Check Inventory</a>
     </button>
   </div>
   <mat-divider></mat-divider>
-  <div class="work-area"></div>
+  <div class="work-area">
+    <div class="placeholder" *ngIf="!makingBill">
+      <div>
+        <button (click)="makebill()" mat-fab color="primary">
+          <mat-icon>add</mat-icon>
+        </button>
+        <p class="placeholder-txt">Make a Bill</p>
+      </div>
+    </div>
+    <div class="make-bill" *ngIf="makingBill">
+      <app-make-bill></app-make-bill>
+      <button
+        mat-raised-button
+        (click)="cancelmakebill()"
+        class="cancel-btn"
+        color="warn"
+      >
+        <mat-icon>delete</mat-icon><a>Cancel</a>
+      </button>
+    </div>
+  </div>
 </div>

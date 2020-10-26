@@ -30,6 +30,7 @@ import { AuthInterceptor } from './auth-interceptor';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HomeComponent } from './home/home.component';
+import { MakeBillComponent } from './make-bill/make-bill.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     SidenavComponent,
     HomeComponent,
+    MakeBillComponent,
   ],
   imports: [
     BrowserModule,
