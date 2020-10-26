@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-make-bill',
@@ -9,4 +10,5 @@ export class MakeBillComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  addItem(form: NgForm) {}
 }

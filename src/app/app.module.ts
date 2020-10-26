@@ -31,6 +31,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HomeComponent } from './home/home.component';
 import { MakeBillComponent } from './make-bill/make-bill.component';
+import { BillComponent } from './bill/bill.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MakeBillComponent } from './make-bill/make-bill.component';
     SidenavComponent,
     HomeComponent,
     MakeBillComponent,
+    BillComponent,
   ],
   imports: [
     BrowserModule,
